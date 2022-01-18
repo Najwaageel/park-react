@@ -18,22 +18,14 @@ function App() {
   const navigate = useNavigate()
 
   const getGames = async () => {
-    const response = await axios.get("https://park-api-1.herokuapp.com/api/games", {
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    const response = await axios.get("https://park-api-final.herokuapp.com/api/games")
     setGames(response.data)
   }
 
   const getProfile = async () => {
-    const response = await axios.get("https://park-api-1.herokuapp.com/api/auth/profile", {
+    const response = await axios.get("https://park-api-final.herokuapp.com/api/auth/profile", {
       headers: {
         Authorization: localStorage.token,
-
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
     })
     setProfile(response.data)
@@ -57,12 +49,7 @@ function App() {
         avatar: form.elements.avatar.value,
       }
 
-      await axios.post("https://park-api-1.herokuapp.com/api/auth/signup", userBody, {
-        headers: {
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      await axios.post("https://park-api-final.herokuapp.com/api/auth/signup", userBody)
       console.log("signup success")
     } catch (error) {
       console.log(error)
@@ -78,12 +65,7 @@ function App() {
         password: form.elements.password.value,
       }
 
-      const response = await axios.post("https://park-api-1.herokuapp.com/api/auth/login", userBody, {
-        headers: {
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      const response = await axios.post("https://park-api-final.herokuapp.com/api/auth/login", userBody)
 
       const token = response.data
       localStorage.token = token
@@ -108,12 +90,9 @@ function App() {
       const ratingBody = {
         rating,
       }
-      await axios.post(`https://park-api-1.herokuapp.com/api/games/${gameId}/ratings`, ratingBody, {
+      await axios.post(`https://park-api-final.herokuapp.com/api/games/${gameId}/ratings`, ratingBody, {
         headers: {
           Authorization: localStorage.token,
-
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       })
       getGames()
@@ -125,12 +104,9 @@ function App() {
 
   const likeGame = async gameId => {
     try {
-      const response = await axios.get(`https://park-api-1.herokuapp.com/api/games/${gameId}/likes`, {
+      const response = await axios.get(`https://park-api-final.herokuapp.com/api/games/${gameId}/likes`, {
         headers: {
           Authorization: localStorage.token,
-
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       })
       getGames()
@@ -149,12 +125,9 @@ function App() {
       }
 
       form.reset()
-      await axios.post(`https://park-api-1.herokuapp.com/api/games/${gameId}/comments`, commentBody, {
+      await axios.post(`https://park-api-final.herokuapp.com/api/games/${gameId}/comments`, commentBody, {
         headers: {
           Authorization: localStorage.token,
-
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       })
 
@@ -165,12 +138,7 @@ function App() {
     }
   }
   const getTickets = async () => {
-    const response = await axios.get("https://park-api-1.herokuapp.com/api/auth/gametickets", {
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    const response = await axios.get("https://park-api-final.herokuapp.com/api/auth/gametickets")
     setTickets(response.data)
     getProfile()
   }
@@ -184,12 +152,9 @@ function App() {
       }
 
       form.reset()
-      await axios.post(`https://park-api-1.herokuapp.com/api/games/${gameId}/tickets`, ticketBody, {
+      await axios.post(`https://park-api-final.herokuapp.com/api/games/${gameId}/tickets`, ticketBody, {
         headers: {
           Authorization: localStorage.token,
-
-          "Content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       })
 
@@ -201,12 +166,9 @@ function App() {
   }
 
   const deleteComment = async (gameId, comment_id) => {
-    await axios.delete(`https://park-api-1.herokuapp.com/api/games/${gameId}/comments/${comment_id}`, {
+    await axios.delete(`https://park-api-final.herokuapp.com/api/games/${gameId}/comments/${comment_id}`, {
       headers: {
         Authorization: localStorage.token,
-
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
     })
     getGames()
