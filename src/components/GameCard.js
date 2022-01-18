@@ -17,7 +17,7 @@ function GameCard(props) {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           height: 420,
-          width:255,
+          width:275,
           // width:300,
           marginBottom:30,
         }}
