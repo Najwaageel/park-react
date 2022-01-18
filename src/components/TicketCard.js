@@ -14,7 +14,8 @@ function TicketCard(props) {
           backgroundImage: `url("${image}")`,
           borderRadius: "30px", 
           height: 500,
-          width:255,
+          // width:255,
+          width:300,
           marginBottom:30,
            }}>
         <Card.Body>
