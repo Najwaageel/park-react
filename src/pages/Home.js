@@ -18,7 +18,7 @@ function Home() {
       <h2 className={styles.title3}> The Games </h2>
 
       <Container>
-        <Row xs={1} sm={2} md={5} className="g-4 mt-4">
+        <Row xs={1} sm={2} md={4} className="g-4 mt-4">
           {games.map(game => (
             <GameCard game={game} />
           ))}
