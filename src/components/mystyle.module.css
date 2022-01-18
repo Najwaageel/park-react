@@ -201,8 +201,10 @@ nav.shift ul li a:hover:after {
 }
 .title1 {
     margin-top: 30px;
-    margin-left: 150px;
-    font-size: 40px;
+    /* margin-left: 150px; */
+    margin-left: 130px;
+    /* font-size: 40px; */
+    font-size: 30px;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     color: rgba(59, 57, 56, 0.863);
