@@ -16,9 +16,9 @@ function GameCard(props) {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          // height: 400,
+          height: 400,
           // width:255,
-          height: 500,
+          // height: 500,
           width:300,
           marginBottom:30,
         }}
