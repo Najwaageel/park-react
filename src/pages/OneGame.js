@@ -22,11 +22,11 @@ function OneGame() {
     setShow(false)
   }
 
-  if (!profile || games.length === 0) return <h1>Loading...</h1>
+  if (games.length === 0) return <h1>Loading...</h1>
 
   const game = games.find(game => game._id === gameId)
 
-  const liked = game.likes.includes(profile._id)
+  const liked = game.likes.includes(profile?._id)
 
   return (
     <>

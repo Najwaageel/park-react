@@ -3,7 +3,7 @@
 
 
 body {
-    font-family: 'Comforter Brush', cursive;
+    /* font-family: 'Comforter Brush', cursive; */
     background: url("../images/image3.jpg") no-repeat center center / cover;
     overflow-x: hidden;
 }
@@ -33,7 +33,8 @@ body {
 .name {
     /* color: rgb(59, 57, 56); */
     color: rgba(83, 159, 161, 0.938);
-    font-size: 80px;
+    /* font-size: 80px; */
+    /* font-size: 20px; */
     text-align: center;
     margin-top: 10px;
     font-family: cursive;
